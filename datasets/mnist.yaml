@@ -1,6 +1,17 @@
 dataset:
   labeled:
-    - - idx: ['http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz']
-      - normalize: []
-    - - idx: ['http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz']
-      - onehot: [10]
+    input:
+      pipeline:
+        - idx:
+            locations:
+              - 'http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz'
+            shape: [28,28]
+        - normalize
+    label:
+      pipeline:
+        - idx:
+            locations:
+              - 'http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz'
+            shape: []
+        - onehot:
+            classes: 10
