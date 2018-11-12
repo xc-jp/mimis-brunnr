@@ -7,6 +7,10 @@ dataset:
               - 'http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz'
             shape: [28,28]
         - normalize
+        - reshape:
+            shape: [1,28,28]
+        - batch:
+            size: 128
     label:
       pipeline:
         - idx:
@@ -15,3 +19,5 @@ dataset:
             shape: []
         - onehot:
             classes: 10
+        - batch:
+            size: 128
