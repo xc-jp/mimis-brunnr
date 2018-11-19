@@ -1,0 +1,9 @@
+dataset:
+  pipeline:
+    - idx:
+        locations:
+          - 'http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz'
+        shape: [28,28]
+    - normalize
+    - reshape:
+        shape: [1,1,28,28]
