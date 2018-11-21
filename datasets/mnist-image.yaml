@@ -4,6 +4,7 @@ dataset:
           locations:
             - 'http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz'
           shape: [28,28]
-      - normalize
+      - normalize:
+          - method: maximal-value
       - reshape:
           shape: [1,1,28,28]
