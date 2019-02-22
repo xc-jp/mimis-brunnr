@@ -1,0 +1,24 @@
+dataset:
+  labeled:
+    input:
+      pipeline:
+        - idx:
+            locations:
+              - 'http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz'
+            shape: [28,28]
+        - normalize:
+            method: maximal-value
+        - reshape:
+            shape: [1,28,28]
+        - batch:
+            size: 16
+    label:
+      pipeline:
+        - idx:
+            locations:
+              - 'http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz'
+            shape: []
+        - onehot:
+            classes: 10
+        - batch:
+            size: 16
