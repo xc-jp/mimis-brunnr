@@ -2,7 +2,8 @@ dataset:
   pipeline:
     - idx:
         locations:
-          - 'http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz'
+          - url: 'http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz'
+            compression: gzip
         shape: []
     - onehot:
         classes: 10

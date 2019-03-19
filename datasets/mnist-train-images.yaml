@@ -2,7 +2,8 @@ dataset:
   pipeline:
     - idx:
         locations:
-          - 'http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz'
+          - url: 'http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz'
+            compression: gzip
         shape: [28,28]
     - normalize:
         method: maximal-value
